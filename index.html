@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Comanda cafea</title>
+	<link rel="stylesheet"  href="style.css">
+	<link 
+	rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script 
+		src="https://code.jquery.com/jquery-3.2.1.min.js"
+	</script>
+	<script 
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">			
+	</script>
+
+</head>
+<body>
+
+
+
+
+
+
+	<div class="back" >
+
+	<div class="lat mut">
+		<div class=" text dr sus col-xs-8 col-xs-offset-4">
+			<form action="">
+				<span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Cafea mare
+				<input class="box" type="checkbox" name="coffee" value="Cafea mare">
+			</form>
+		</div>
+
+		<div class=" text  dr col-xs-8 col-xs-offset-3">
+			<form action="">
+				<span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Cafea medie
+				<input class="box" type="checkbox" name="coffee" value="Cafea medie">
+			</form>
+		</div>
+		<div class=" gros col-xs-1">			
+		</div>
+
+		<div class="text dr col-xs-8 col-xs-offset-2">
+			<form action="">
+				<span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Cafea mica
+				<input class="box" type="checkbox" name="coffee" value="Cafea mica">
+			</form>
+		</div>
+		<div class=" gros col-xs-2">			
+		</div>
+
+		<div class=" text dr col-xs-8 col-xs-offset-2">
+			<form action="">
+				<span class="glyphicon glyphicon-tint" aria-hidden="true"></span>Ceai
+				<input class="box" type="checkbox" name="coffee" value="Ceai">
+			</form>
+		</div>
+		<div class=" gros col-xs-2">			
+		</div>
+
+		<div class=" text dr col-xs-8 col-xs-offset-3">
+			<form action="">
+				<span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Expresso
+				<input class="box" type="checkbox" name="coffee" value="Expresso">
+			</form>
+		</div>
+		<div class=" gros col-xs-1">			
+		</div>
+
+		<div class=" text dr col-xs-8 col-xs-offset-4">
+			<form action="">
+				<span class="glyphicon glyphicon-fire" aria-hidden="true"></span>Ciocolata calda
+				<input class="box" type="checkbox" name="coffee" value="Ciocolata calda">
+			</form>
+		</div>
+
+	</div>
+
+	<div class="lat mut">
+
+
+
+	<div class=" text st sus col-xs-8">
+			<form action="">
+				<input class="box" type="checkbox" name="cream" value="cu scortisoara">
+				Scortisoara
+			</form>
+		</div>
+
+		<div class=" text  st col-xs-8 col-xs-offset-1">
+			<form action="">
+				<input class="box" type="checkbox" name="cream" value="fara zahar">
+				Fara zahar
+			</form>
+		</div>
+		<div class=" gros col-xs-1">			
+		</div>
+
+		<div class="text st col-xs-8 col-xs-offset-2">
+			<form action="">
+				<input class="box" type="checkbox" name="cream" value="cu lapte">
+				Lapte
+			</form>
+		</div>
+		<div class=" gros col-xs-2">			
+		</div>
+
+		<div class=" text st col-xs-8 col-xs-offset-2">
+			<form action="">
+				<input class="box" type="checkbox" name="cream" value="cu bezele">
+				Bezele
+			</form>
+		</div>
+		<div class=" gros col-xs-2">			
+		</div>
+
+		<div class=" text st col-xs-8 col-xs-offset-1">
+			<form action="">
+				<input class="box" type="checkbox" name="cream" value="cu caramel">
+				Caramel
+			</form>
+		</div>
+		<div class=" gros col-xs-1">			
+		</div>
+
+		<div class=" text st col-xs-8">
+			<form action="/action_page.php" method="get">
+				<input class="box" type="checkbox" id="order" name="cream" value="cu frisca">
+				Frisca
+			</form>
+		</div>	
+
+	</div>
+
+	<div class=" sus col-xs-4 col-xs-offset-4">
+		<button class=" but  btn-info col-xs-12" id="servire">Prepara</button>
+		<a href="index.html"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a>
+	</div>
+	<div class="sus col-xs-4 gros2">
+		
+	</div>
+
+		
+	 <div class=" text2 dr col-xs-3 col-xs-offset-3" id="divcoffee"></div> 
+	 <div class="text2 st  col-xs-4" id="divcream"></div>
+
+ 	 
+
+
+
+
+
+	</div>
+
+
+	<script>
+  $(document).ready(function () { 
+  	$('input[name="coffee"]').click(function () { 
+  		getSelectedCheckBoxes('coffee'); });
+  	$('input[name="cream"]').click(function () {
+  		getSelectedCheckBoxes('cream'); });
+  		  var getSelectedCheckBoxes = function (groupName) { 
+  		  	var result = $('input[name="' + groupName + '"]:checked'); 
+  		  	if (result.length > 0) { 
+  		  	var resultString = " <br/>"; 
+  		  	result.each(function () { 
+  		  	resultString += $(this).val() + "<br/>"; }); 
+  		  $('#div' + groupName).html(resultString); } 
+  		  	else { 
+  		  		$('#div' + groupName).html("Faceti o slectie");
+  		  		 }
+  		  		};
+  		  		}); 
+  </script>
+
+
+
+
+
+	<script>
+      var coc = "Cafeaua dumneavoastra va fi gata in cateva secunde" ;
+	 $("#servire").on("click", function() {
+	 	if (true) {}
+	 	alert(coc);
+	 	});
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 
+
+
+
+	
+
+
+
+
+</body>
+</html>
